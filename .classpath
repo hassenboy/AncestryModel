@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri/lib/jaxb-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri/lib/jaxb-core.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri/lib/jaxb-impl.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri/lib/jaxb-jxc.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri/lib/jaxb-xjc.jar"/>
+	<classpathentry exported="true" kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jaxb-ri-2.2.11.zip"/>
+	<classpathentry kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jlr.zip"/>
+	<classpathentry kind="lib" path="/media/johannes/internalhdd/data/Programming/packages/jlr/jlr.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

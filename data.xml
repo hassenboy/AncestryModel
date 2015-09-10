@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModelData>
+    <person id="1">
+        <name>Anne Lindgren</name>
+        <birth_date>1967-10-13</birth_date>
+    </person>
+    <person id="2">
+        <name>Arnold Thomas Lindgren</name>
+        <birth_date>1965-01-17</birth_date>
+        <father>22</father>
+        <mother>11</mother>
+        <residence>
+            <place>Piongatan</place>
+            <in_migration_date>1965</in_migration_date>
+            <out_migration_date>1985</out_migration_date>
+        </residence>
+        <residence>
+            <place>Olofshöjd</place>
+            <in_migration_date>1985-1990</in_migration_date>
+        </residence>
+        <residence>
+            <place>Träringen</place>
+            <in_migration_date>1994-10-30</in_migration_date>
+        </residence>
+        <residence>
+            <place>Studiegången</place>
+            <out_migration_date>2000</out_migration_date>
+        </residence>
+        <residence>
+            <place>Anneberg</place>
+            <in_migration_date>2000</in_migration_date>
+            <out_migration_date>2000</out_migration_date>
+        </residence>
+        <residence>
+            <place>Sågmästaregatan 1E</place>
+            <in_migration_date>2000</in_migration_date>
+            <out_migration_date>2013-09</out_migration_date>
+        </residence>
+    </person>
+    <person id="3">
+        <name>Johannes Arnold Thomas Lindgren</name>
+        <birth_date>1994-10-30</birth_date>
+        <father>2</father>
+        <mother>1</mother>
+        <residence>
+            <place>Träringen</place>
+            <in_migration_date>1994-10-30</in_migration_date>
+        </residence>
+        <residence>
+            <place>Studiegången</place>
+            <out_migration_date>2000</out_migration_date>
+        </residence>
+        <residence>
+            <place>Anneberg</place>
+            <in_migration_date>2000</in_migration_date>
+            <out_migration_date>2000</out_migration_date>
+        </residence>
+        <residence>
+            <place>Sågmästaregatan 1E</place>
+            <in_migration_date>2000</in_migration_date>
+            <out_migration_date>2013-09</out_migration_date>
+        </residence>
+    </person>
+    <person id="4">
+        <name>Elin Hanna Ingegärd Lindgren</name>
+        <birth_date>2001-10-13</birth_date>
+        <father>2</father>
+        <mother>1</mother>
+    </person>
+    <marriage id="01">
+        <first_person>1</first_person>
+        <second_person>2</second_person>
+        <marriage_date>2005-07</marriage_date>
+    </marriage>
+</ModelData>
