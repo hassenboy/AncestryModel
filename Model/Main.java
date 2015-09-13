@@ -2,11 +2,17 @@ package Model;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+
+import org.folg.gedcom.model.Gedcom;
+import org.folg.gedcom.model.*;
+import org.folg.gedcom.parser.ModelParser;
 
 import de.nixosoft.jlr.JLRConverter;
 import de.nixosoft.jlr.JLRGenerator;
@@ -16,101 +22,137 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		JAXBContext jc;
-		try {
+		Gedcom gedcom = loadGedcom();
 
-			// JAXBContext jaxbContext = JAXBContext.newInstance(Pair.class);
+		Person p = gedcom.getPeople().get(4);
+		
+		System.out.println(p.getEventsFacts().get(1).getDisplayType());
+//		for(Association e : l1)
+//		{
+//			System.out.println(e.get);
+//		}
+		// Inger
+		Person inger = new Person();
+		Name name = new Name();
+		name.setSurname("Inger");
+		name.setMarriedName("Lindgren");
+		inger.addName(name);
+		EventFact eventFact = new EventFact();
+		
+//		try {
 
-			// Anne
-			PersonData inger = new PersonData();
-			inger.id = "11";
-			inger.name = "Inger Lindgren";
-			inger.birthDate = "1935";
-
-			// Anne
-			PersonData arnold = new PersonData();
-			arnold.id = "22";
-			arnold.name = "Arnold Lindgren";
-			arnold.birthDate = "1933";
+// 			JAXBContext jaxbContext = JAXBContext.newInstance(Pair.class);
 			
-			// Anne
-			PersonData anne = new PersonData();
-			anne.id = "1";
-			anne.name = "Anne Lindgren";
-			anne.birthDate = "1967-10-13";
 
-			// Thomas
-			PersonData thomas = new PersonData();
-			thomas.id = "2";
-			thomas.name = "Arnold Thomas Lindgren";
-			thomas.birthDate = "1965-01-17";
-			thomas.addResidence("Piongatan", "1965", "1985");
-			thomas.addResidence("Olofshöjd", "1985-1990", null);
-			thomas.addResidence("Träringen", "1994-10-30", null);
-			thomas.addResidence("Studiegången", null, "2000");
-			thomas.addResidence("Anneberg", "2000", "2000");
-			thomas.addResidence("Sågmästaregatan 1E", "2000", "2013-09");
-			thomas.father = arnold;
-			thomas.mother = inger;
+//			// Anne
+//			PersonData arnold = new PersonData();
+//			arnold.id = "22";
+//			arnold.name = "Arnold Lindgren";
+//			arnold.birthDate = "1933";
+//			
+//			// Anne
+//			PersonData anne = new PersonData();
+//			anne.id = "1";
+//			anne.name = "Anne Lindgren";
+//			anne.birthDate = "1967-10-13";
+//
+//			// Thomas
+//			PersonData thomas = new PersonData();
+//			thomas.id = "2";
+//			thomas.name = "Arnold Thomas Lindgren";
+//			thomas.birthDate = "1965-01-17";
+//			thomas.addResidence("Piongatan", "1965", "1985");
+//			thomas.addResidence("Olofshöjd", "1985-1990", null);
+//			thomas.addResidence("Träringen", "1994-10-30", null);
+//			thomas.addResidence("Studiegången", null, "2000");
+//			thomas.addResidence("Anneberg", "2000", "2000");
+//			thomas.addResidence("Sågmästaregatan 1E", "2000", "2013-09");
+//			thomas.father = arnold;
+//			thomas.mother = inger;
+//
+//			MarriageData anneAndThomas = new MarriageData();
+//			anneAndThomas.firstPerson = anne;
+//			anneAndThomas.secondPerson = thomas;
+//			anneAndThomas.id = "01";
+//			anneAndThomas.marriageDate = "2005-07";
+//
+//			anne.marriages.add(anneAndThomas);
+//			thomas.marriages.add(anneAndThomas);
+//
+//			// Johannes
+//			PersonData johannes = new PersonData();
+//			johannes.id = "3";
+//			johannes.name = "Johannes Arnold Thomas Lindgren";
+//			johannes.birthDate = "1994-10-30";
+//			johannes.father = thomas;
+//			johannes.mother = anne;
+//			johannes.addResidence("Träringen", "1994-10-30", null);
+//			johannes.addResidence("Studiegången", null, "2000");
+//			johannes.addResidence("Anneberg", "2000", "2000");
+//			johannes.addResidence("Sågmästaregatan 1E", "2000", "2013-09");
+//
+//			// Elin
+//			PersonData elin = new PersonData();
+//			elin.id = "4";
+//			elin.name = "Elin Hanna Ingegärd Lindgren";
+//			elin.birthDate = "2001-10-13";
+//			elin.father = thomas;
+//			elin.mother = anne;
+//
+//			ModelData modelData = new ModelData();
+//			modelData.marriages.add(anneAndThomas);
+//			modelData.persons.add(anne);
+//			modelData.persons.add(thomas);
+//			modelData.persons.add(johannes);
+//			modelData.persons.add(elin);
+//
+//			File dataFile = new File("/home/johannes/workspace/AncestryModel/data.xml");
+//			JAXBContext jaxbContext = JAXBContext.newInstance(ModelData.class);
+//			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+//
+//			// output pretty printed
+//			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+//			jaxbMarshaller.marshal(modelData, dataFile);
+//
+//			//
+//			// jc = JAXBContext.newInstance(ModelData.class);
+//			//
+//			// Unmarshaller unmarshaller = jc.createUnmarshaller();
+//			// ModelData tests = (ModelData) unmarshaller.unmarshal(dataFile);
+//			//
+//			// Marshaller marshaller = jc.createMarshaller();
+//			// marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+//			// marshaller.marshal(tests, System.out);
+//			
+//			latexToPdf(thomas);
+//		} catch (JAXBException e) {
+//			e.printStackTrace();
+//		}
+	}
 
-			MarriageData anneAndThomas = new MarriageData();
-			anneAndThomas.firstPerson = anne;
-			anneAndThomas.secondPerson = thomas;
-			anneAndThomas.id = "01";
-			anneAndThomas.marriageDate = "2005-07";
-
-			anne.marriages.add(anneAndThomas);
-			thomas.marriages.add(anneAndThomas);
-
-			// Johannes
-			PersonData johannes = new PersonData();
-			johannes.id = "3";
-			johannes.name = "Johannes Arnold Thomas Lindgren";
-			johannes.birthDate = "1994-10-30";
-			johannes.father = thomas;
-			johannes.mother = anne;
-			johannes.addResidence("Träringen", "1994-10-30", null);
-			johannes.addResidence("Studiegången", null, "2000");
-			johannes.addResidence("Anneberg", "2000", "2000");
-			johannes.addResidence("Sågmästaregatan 1E", "2000", "2013-09");
-
-			// Elin
-			PersonData elin = new PersonData();
-			elin.id = "4";
-			elin.name = "Elin Hanna Ingegärd Lindgren";
-			elin.birthDate = "2001-10-13";
-			elin.father = thomas;
-			elin.mother = anne;
-
-			ModelData modelData = new ModelData();
-			modelData.marriages.add(anneAndThomas);
-			modelData.persons.add(anne);
-			modelData.persons.add(thomas);
-			modelData.persons.add(johannes);
-			modelData.persons.add(elin);
-
-			File dataFile = new File("/home/johannes/workspace/AncestryModel/data.xml");
-			JAXBContext jaxbContext = JAXBContext.newInstance(ModelData.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-			// output pretty printed
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(modelData, dataFile);
-			jaxbMarshaller.marshal(modelData, System.out);
-
-			//
-			// jc = JAXBContext.newInstance(ModelData.class);
-			//
-			// Unmarshaller unmarshaller = jc.createUnmarshaller();
-			// ModelData tests = (ModelData) unmarshaller.unmarshal(dataFile);
-			//
-			// Marshaller marshaller = jc.createMarshaller();
-			// marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			// marshaller.marshal(tests, System.out);
-			
-			latexToPdf(thomas);
-		} catch (JAXBException e) {
+	private static Gedcom loadGedcom() {
+		Gedcom gedcom = null;
+		try
+		{
+			URL gedcomUrl = Main.class.getClassLoader().getResource("ThomasLindgren.ged");
+		    File gedcomFile = new File(gedcomUrl.toURI());
+		    ModelParser modelParser = new ModelParser();
+		    
+		    gedcom = modelParser.parseGedcom(gedcomFile);
+		}
+		catch(Exception e)
+		{
 			e.printStackTrace();
+			System.exit(0);
+		}
+		return gedcom;
+	}
+	
+	private void assertNotNull(Object o)
+	{
+		if(o == null)
+		{
+			throw new NullPointerException("Assert null");
 		}
 	}
 

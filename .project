@@ -14,4 +14,36 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>jaxb-api.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jaxb-api.jar</locationURI>
+		</link>
+		<link>
+			<name>jaxb-core.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jaxb-core.jar</locationURI>
+		</link>
+		<link>
+			<name>jaxb-impl.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jaxb-impl.jar</locationURI>
+		</link>
+		<link>
+			<name>jaxb-jxc.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jaxb-jxc.jar</locationURI>
+		</link>
+		<link>
+			<name>jaxb-xjc.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jaxb-xjc.jar</locationURI>
+		</link>
+		<link>
+			<name>jlr.jar</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/lib/jlr.jar</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

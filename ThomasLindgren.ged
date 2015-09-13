@@ -1,0 +1,236 @@
+0 HEAD
+1 SOUR MinSlèakt
+2 VERS V3.11
+2 NAME MinSlèakt
+1 DEST MinSlèakt
+1 DATE 11 sep 2015
+1 SUBM @SUBM1@
+1 FILE ThomasLindgren.ged
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 CHAR ANSEL
+1 LANG Swedish
+0 @I1@ INDI
+1 NAME Amanda /Johansdotter/
+1 SEX M
+1 FAMC @F6@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @I2@ INDI
+1 NAME Anders /Gustavsson/
+1 SEX M
+1 FAMC @F4@
+1 CHAN
+2 DATE 13 AUG 2014
+0 @I3@ INDI
+1 NAME Arnold Axel Tage Gustav /Lindgren/
+1 REFN 1:2
+1 SEX M
+1 BIRT
+2 DATE 16 JUN 1933
+2 PLAC Nèastagêard, Myresjèo (F)
+1 CHR
+2 DATE 1933
+2 NOTE Dopvittnen: AA, BB, CC
+1 OCCU Besiktningsman
+1 FAMS @F1@
+1 FAMC @F2@
+1 NOTE Notering fèor Arnold
+2 CONT Jan var rusthêallare och gèastgivare. Jan hade det svêart med spriten [EN].
+2 CONT Jan Nilsson och hans hustru Annika Andersdotter sêalde 1822 Frèoset Sèodregêard(?) till sin brorson Mêans Petterson och han
+2 CONC s hustru Sara Lisa Jonasdotter [KB].
+1 _TODO_NOTE Att gèora Arnold
+1 CHAN
+2 DATE 13 AUG 2014
+0 @I4@ INDI
+1 NAME Arnold Thomas /Lindgren/
+1 SEX M
+1 BIRT
+2 DATE 17 JAN 1965
+2 PLAC Karlstad
+1 RESI
+2 DATE BET 1965 AND 1986
+2 PLAC Piongatan 12
+1 CHR
+2 DATE 30 MAY 1965
+2 PLAC Karlstad, i hemmet
+1 OCCU Civilingenjèor
+1 FAMC @F1@
+1 CHAN
+2 DATE 6 AUG 2014
+0 @I5@ INDI
+1 NAME Edvin Natanael /Lindgren/
+1 REFN 2:4
+1 SEX M
+1 BIRT
+2 DATE 1903
+2 PLAC Bèackaby
+2 SOUR @S1@
+3 PAGE 
+1 DEAT
+2 DATE 1941
+2 PLAC Myresjèo
+2 SOUR @S2@
+3 PAGE 
+2 NOTE êAlder 38 êar
+1 BURI
+2 DATE 15 JUN 1941
+2 PLAC Bèackaby kyrka
+1 FAMS @F2@
+1 CHAN
+2 DATE 13 AUG 2014
+0 @I6@ INDI
+1 NAME Einar /Gustavsson/
+1 SEX M
+1 TITL Hemmansèagare
+1 FAMS @F4@
+1 CHAN
+2 DATE 12 AUG 2014
+0 @I7@ INDI
+1 NAME Elsie /Ahlesved/
+1 SEX F
+1 FAMC @F3@
+1 CHAN
+2 DATE 5 AUG 2014
+0 @I8@ INDI
+1 NAME Eva /Berglund/
+1 SEX F
+1 FAMC @F3@
+1 CHAN
+2 DATE 5 AUG 2014
+0 @I9@ INDI
+1 NAME Frans /Rydlund/
+1 SEX M
+1 FAMS @F5@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @I10@ INDI
+1 NAME Hanna /Rydlund/
+1 REFN 2:3
+1 SEX F
+1 BIRT
+2 DATE 1912
+2 PLAC Slageryd
+1 RESI
+2 PLAC Slageryd Vèastregêard 1912-1933
+1 FAMS @F2@
+1 FAMS @F4@
+1 FAMC @F5@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @I11@ INDI
+1 NAME Hulda Josefina /Johansdotter/
+1 SEX F
+1 FAMS @F5@
+1 FAMC @F6@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @I12@ INDI
+1 NAME Karl /Karlsson/
+1 SEX M
+1 FAMS @F3@
+1 CHAN
+2 DATE 4 AUG 2014
+0 @I13@ INDI
+1 NAME Maria /Johannisdotter/
+1 REFN T4:9
+1 SEX F
+1 FAMS @F6@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @I14@ INDI
+1 NAME Rut Inger /Lindgren/
+1 REFN 1:1
+1 SEX F
+1 BIRT
+2 DATE 9 JUL 1935
+2 PLAC Solvik Avelsbol, Stravnèas (S)
+1 FAMS @F1@
+1 FAMC @F3@
+1 CHAN
+2 DATE 4 AUG 2014
+0 @I15@ INDI
+1 NAME Selma Karolina /Karlsson/
+1 SEX F
+1 FAMS @F3@
+1 CHAN
+2 DATE 4 AUG 2014
+0 @I16@ INDI
+1 NAME Siw /Karlsson/
+1 SEX F
+1 FAMC @F3@
+1 CHAN
+2 DATE 5 AUG 2014
+0 @I17@ INDI
+1 NAME Yvonne /Sjèoberg/
+1 SEX F
+1 FAMC @F1@
+1 CHAN
+2 DATE 4 AUG 2014
+0 @F1@ FAM
+1 HUSB @I3@
+1 WIFE @I14@
+1 CHIL @I4@
+1 CHIL @I17@
+1 MARR
+2 DATE JUN 1957
+2 PLAC Stavnèas kyrka (S)
+2 NOTE Ur Bby db 1773: “den 5 Febr. Dèodde och d. 14 ejusd. Begrofs unga hustr. Christin Jèonsd. Ifrêan Slageryd èOfregd., f. 174
+3 CONC 8 April 5, F. Fr[èalse]fog[en] Jèons Norlin och Mod. Ingrid Svensdr. I Bèackaby Lillegd. Dèopt. Warit mèast hemma i fèorèaldrar
+3 CONC nas hus. Tjèant hos andra i 5 êahr . Kunde enfaldigt lèasa och fèorstêa Christendomsstyckena. Lefnad stilla. Gift 1771 med dr
+3 CONC . nu enkl. Gustaf Andersson ifr. Hjèartlanda, fèodt honom en dotter d. 13 Dec 1772, som lefwer efter modren. Siuk af hetsi
+3 CONC g feber d. 29 Jan., och blef dèod, innan man fèormodat. Stack êadrorna - - - och tjèanst pêa hennes dèodssèang. Gud war oss ned
+3 CONC elig. Hennes lifstid 24 êar 10 m.”
+1 CHAN
+2 DATE 4 AUG 2014
+0 @F2@ FAM
+1 HUSB @I5@
+1 WIFE @I10@
+1 CHIL @I3@
+1 MARR
+2 DATE 1933
+2 PLAC Bèackaby
+1 CHAN
+2 DATE 4 AUG 2014
+0 @F3@ FAM
+1 HUSB @I12@
+1 WIFE @I15@
+1 CHIL @I14@
+1 CHIL @I8@
+1 CHIL @I16@
+1 CHIL @I7@
+1 CHAN
+2 DATE 4 AUG 2014
+0 @F4@ FAM
+1 HUSB @I6@
+1 WIFE @I10@
+1 CHIL @I2@
+1 MARR
+2 DATE (1953?)
+2 PLAC Rèosêas, Nèavelsjèo (F)
+1 CHAN
+2 DATE 12 AUG 2014
+0 @F5@ FAM
+1 HUSB @I9@
+1 WIFE @I11@
+1 CHIL @I10@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @F6@ FAM
+1 WIFE @I13@
+1 CHIL @I11@
+1 CHIL @I1@
+1 CHAN
+2 DATE 21 SEP 2014
+0 @S1@ SOUR
+1 TITL Bèackaby AI:17
+1 ABBR Bèackaby AI:17
+0 @S2@ SOUR
+1 TITL Myresjèo AI:18
+1 ABBR Myresjèo AI:18
+0 @SUBM1@ SUBM
+1 NAME 
+1 ADDR
+1 PHON 
+0 TRLR
