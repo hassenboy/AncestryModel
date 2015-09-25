@@ -1,0 +1,19 @@
+.person-editor * {
+	-fx-background-color: white;
+	-fx-padding: 0;
+	-fx-margin: 0;
+}
+
+
+.hbox {
+	-fx-border-width: 1, 1;
+	-fx-border-style: solid;
+}
+
+.person-editor .label {
+	-fx-font-weight: bold;
+}
+
+.person-editor .text-field {
+	-fx-border-color: #0f0f0f;
+}

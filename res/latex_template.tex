@@ -1,0 +1,220 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl}			% KOMA-article class
+		
+					
+\usepackage[svgnames]{xcolor}							% Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px									% Saving trees ;-) 
+\usepackage{url}										% Clickable URL's
+\usepackage{wrapfig}									% Wrap text along figures
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% För riktiga å, ä och ö:
+% Den första säger att dokumentet är kodat som UTF-8, den nya
+% universella teckenkodningen. Tidigare var \usepackage[latin1]{inputenc}
+% vanligt, vilket säger att dokumentet är kodat som ISO-8859-1 - som
+% var brukligt i Sverige och övriga Västeuropa.
+% Den andra säger att vi ska använda fonter som är speciellt anpassade
+% för Västeuropeiska språk, bland annat kommer prickarna över "ö" lite
+% närmare o:et.
+% Det räcker ofta, men inte alltid, att bara ange den senare. Det bör
+% räcka att bara ange den första, men blir inte _fullt_ så snyggt.
+
+\usepackage[swedish]{babel}
+% Svensk avstavning (om den är installerad) och svenska rubriker på
+% sådant som LaTeX lägger till: sammanfattning,
+% innehållsförteckning...
+
+\usepackage{lmodern}
+% lmodern ger typsnitt som lämpar sig bättre i PDF-filer. Traditionellt
+% använder LaTeX bitmap-fonter, som ser bra ut i tryck, men som kan se
+% ganska bedrövligt ut i PDF-filer (om de visas på bildskärm).
+
+\usepackage{icomma}
+% I icke-engelsk skrift används decimalkomma, i engelsk är kommatecken
+% i matteläge enbart en koordinatavskiljare. Därför sätter LaTeX i
+% vanliga fall automatiskt in ett extra mellanslag efter alla
+% kommatecken i matteläge. Detta kommando ger ett intelligent
+% kommatecken som förstår om det är decimalavskiljare eller
+% koordinatavskiljare, beroende på om det står något mellanslag
+% efter. Använd aldrig decimalpunkt i icke-engelsk skrift.
+
+\usepackage{color}
+\usepackage{graphicx}
+% Dessa behövs när man inkluderar figurer från xfig, i
+% latex+postscript format (brukar bli snyggast). Använder man vanliga
+% eps-figurer behöver man inte color-paketet. Det finns både paketet
+% "graphics" och "graphicx", med något olika syntax. Om alla bilder
+% har rätt storlek när man importerar dem behöver man inte bry sig om
+% skillnaderna.
+\frenchspacing									% Better looking spacings after periods
+\pagestyle{empty}								% No pagenumbers/headers/footers
+
+\usepackage{sectsty} 
+\sectionfont{%
+ \usefont{OT1}{phv}{b}{n}%
+ \sectionrule{0pt}{0pt}{-5pt}{1pt} }	
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}							% Custom sectioning (see below)
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}				% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
+
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}				% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
+
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}				% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}			% Vertical space macro
+
+\newcommand{\MyName}[1]{
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 		% Name
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1} % Slogan (optional)
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\tabellA}[2]{
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		\textit{#1}}								% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}					% Entry value
+
+\newcommand{\tabellB}[2]{						% Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 		% Indentation
+		\parbox{\spacebox}{						% Box to align text
+		\textit{#1}}								% Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}					% Entry value	
+		
+\newcommand{\NewSubPart}[4]{
+		\noindent \textbf{#1} \hfill 					% Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par				% Duration
+		\noindent \textit{#3} \par					% School
+		\noindent\hangindent=2em\hangafter=0 \small #4 	% Description
+		\normalsize \par}
+
+
+
+
+%%% ------------------------------------------------------------
+%%% BEGIN DOCUMENT
+%%% ------------------------------------------------------------
+\begin{document}
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\vspace*{-2em}
+		\includegraphics[width=0.15\textwidth]{photo}
+\end{wrapfigure}
+
+\MyName{$name}
+\MySlogan{Personakt}
+
+\sepspace
+%%% ------------------------------------------------------------
+
+
+%%% 
+%%%   Personliga detaljer
+%%% ------------------------------------------------------------
+\NewPart{Personliga detaljer}{}
+
+
+\begin{tabular}{ l | c | r }
+Född:	& 	$birthDate 		& 	 			\\
+Döpt: 	& 	$baptizedDate 	& 	 			\\
+Moder:	& 	$mother 		& $motherRef	\\
+Fader 	& 	$father	 		& $fatherRef 	\\
+Faddrar & 	$father	 		& 	 			\\
+
+\hline
+
+Död:	& 	$deathDate		& 	 			\\
+Begravd:& 	$burialPlace	& 	 			\\
+Ålder:	& 	$age	 		& 	 			\\
+
+\hline
+
+#foreach( $spouse in $spouses)
+Gift:	& $spouse[0]		& spouse[1]		\\
+\hline
+#end
+
+Yrke:	& 	$work	 		& 	 			\\
+
+\hline
+
+Barn:	& 					& 	 			\\
+#foreach( $child in $children)
+$child[0]	& $child[1]		& child[2]		\\
+#end
+
+\hline
+
+
+Bosättning:	& 					& 	 			\\
+#foreach( $residence in $residences)
+$residence[0]	& $residence[1]		& residence[2]		\\
+#end
+
+\hline
+
+\end{tabular}
+
+%%% ------------------------------------------------------------
+
+%%%   Hemvister
+%%% ------------------------------------------------------------
+\NewPart{Hemvister}{} 
+	#foreach( $name in $residences )
+		\NewSubPart{$name[0]}{$name[1]}{$name[2]}{$name[3]}
+	#end
+	\sepspace
+%%% ------------------------------------------------------------
+
+%%%  Äktenskap
+%%% ------------------------------------------------------------
+\NewPart{Äktenskap}{}
+
+\begin{description}
+#foreach( $name in $marriages )
+	\item[$name[0]] $name[1]
+	
+	\begin{description}
+	#foreach( $name2 in $marriagesChildren )	
+		\item[$name2[0]] $name2[1]
+ 	#end 
+	\end{description}
+#end 
+\end{description}
+\sepspace
+
+%%% ------------------------------------------------------------
+
+%%%  
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\tabellB{Födelsedatum}{$birth_date} 
+\tabellB{Far}{$father}
+\tabellB{Mor}{$mother}
+
+
+\endgroup
+\end{document}
