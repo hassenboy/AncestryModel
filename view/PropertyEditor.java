@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -28,7 +28,6 @@ public class PropertyEditor
         
         textInputControl.textProperty().addListener(new ChangeListener<String>()
         {
-
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
             {

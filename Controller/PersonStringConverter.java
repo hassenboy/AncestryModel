@@ -2,9 +2,9 @@ package Controller;
 
 import org.folg.gedcom.model.Person;
 
-import Wrappers.NGedcom;
-import Wrappers.NPerson;
 import javafx.util.StringConverter;
+import model.wrappers.NGedcom;
+import model.wrappers.NPerson;
 
 public class PersonStringConverter extends StringConverter<NPerson>
 {

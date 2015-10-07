@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -14,7 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.plaf.basic.BasicComboBoxEditor;
 
-import Wrappers.NPerson;
+import model.wrappers.NPerson;
 
 class AutoCompleteBox<E> extends JComboBox<String>
 {

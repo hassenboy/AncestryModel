@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -6,44 +6,70 @@ import java.util.function.Consumer;
 import org.folg.gedcom.model.EventFact;
 import org.folg.gedcom.model.Note;
 
-import Model.Tree;
-import Wrappers.NPerson;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import model.wrappers.NPerson;
 
-public class TreeEditor extends TreeView<String>
+public class PersonTreeEditor extends TreeView<String>
 {
 
     private Tree<String> tree;
     private TreeItem<String> rootNode;
 
-    private Consumer<NPerson> onChange;
-    private NPerson person;
+    private Consumer<NPerson> onChangeListener;
+    private NPerson rootPerson;
+    private ChangeListener<Boolean> focusedListener;
     
-    public TreeEditor(NPerson person, Consumer<NPerson> onChange)
+    public PersonTreeEditor(NPerson rootPerson)
     {
-        this.person = person;
-        this.onChange = onChange;
-        
-        PropertyEditor peRoot = PropertyEditor.createField(() -> person.getName(), (p) -> person.setName(p), changeListener);
-        rootNode = new TreeItem<String>("Namn", peRoot.getNode());
-        rootNode.setExpanded(false);
-        this.setRoot(rootNode);
-        addDummy();
+        setRootPerson(rootPerson);
+    }
 
-        focusedProperty().addListener(new ChangeListener<Boolean>()
+
+    public void setOnChangeListener(Consumer<NPerson> onChangeListener)
+    {
+        this.onChangeListener = onChangeListener;
+
+        if(focusedListener != null)
         {
-
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
-            {
-                onChange.accept(person);
-            }
-        });
+            focusedProperty().removeListener(focusedListener);
+        }
         
+        if(onChangeListener != null)
+        {
+            focusedListener = new ChangeListener<Boolean>()
+            {
+
+                @Override
+                public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue)
+                {
+                    onChangeListener.accept(rootPerson);
+                }
+            };
+            focusedProperty().addListener(focusedListener);
+        }
+        else
+        {
+            throw new NullPointerException();
+        }
+    }
+    
+    private void addPerson()
+    {
+        
+    }
+
+    private void initContent()
+    {
+        clearContent();
+        PropertyEditor nameEditor = PropertyEditor.createField(() -> rootPerson.getName(), (p) -> rootPerson.setName(p), changeListener);
+        rootNode = new TreeItem<String>("Namn", nameEditor.getNode());
+        rootNode.setExpanded(false);
+        setRoot(rootNode);
+
         rootNode.expandedProperty().addListener(new ChangeListener<Boolean>()
         {
             @Override
@@ -51,7 +77,7 @@ public class TreeEditor extends TreeView<String>
             {
                 if(!oldValue && newValue)
                 {
-                    addContent();
+                    initContent();
                 }
                 else if(!newValue)
                 {
@@ -59,12 +85,10 @@ public class TreeEditor extends TreeView<String>
                 }
             }
         });
-    }
-
-    private void addContent()
-    {
-        clearContent();
-        for(EventFact event : person.getEventsFacts())
+        // Name
+        
+        // Events
+        for(EventFact event : rootPerson.getEventsFacts())
         {
             TreeItem<String> eventNode = new TreeItem<String>("Event av typen " + event.getDisplayType());
             rootNode.getChildren().add(eventNode);
@@ -79,13 +103,7 @@ public class TreeEditor extends TreeView<String>
     
     private void clearContent()
     {
-        rootNode.getChildren().clear();
-        addDummy();
-    }
-    
-    private void addDummy()
-    {
-        rootNode.getChildren().add(new TreeItem<String>());
+        getChildren().clear();
     }
     
     private void addNoteNodes(List<Note> notes, TreeItem<String> parentNode)
@@ -105,8 +123,19 @@ public class TreeEditor extends TreeView<String>
         @Override
         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
         {
-            onChange.accept(person);
+            onChangeListener.accept(rootPerson);
         }
     };
+
+    public NPerson getRootPerson()
+    {
+        return rootPerson;
+    }
+
+    public void setRootPerson(NPerson rootPerson)
+    {
+        this.rootPerson = rootPerson;
+        initContent();
+    }
 
 }

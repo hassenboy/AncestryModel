@@ -1,10 +1,9 @@
-package View;
+package view;
 
 import java.util.function.Consumer;
 
 import org.folg.gedcom.model.EventFact;
 
-import Wrappers.NPerson;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
@@ -14,6 +13,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import model.wrappers.NPerson;
 
 public class PersonEditor extends TitledPane
 {

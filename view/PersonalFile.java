@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -17,11 +17,11 @@ import org.folg.gedcom.model.Note;
 import com.sun.pdfview.PDFFile;
 import com.sun.pdfview.PDFPage;
 
-import Wrappers.NFamily;
-import Wrappers.NGedcom;
-import Wrappers.NPerson;
 import de.nixosoft.jlr.JLRConverter;
 import de.nixosoft.jlr.JLRGenerator;
+import model.wrappers.NFamily;
+import model.wrappers.NGedcom;
+import model.wrappers.NPerson;
 
 public class PersonalFile
 {

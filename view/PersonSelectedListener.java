@@ -1,6 +1,6 @@
-package View;
+package view;
 
-import Wrappers.NPerson;
+import model.wrappers.NPerson;
 
 public interface PersonSelectedListener
 {

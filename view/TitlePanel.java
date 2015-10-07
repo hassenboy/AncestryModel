@@ -1,4 +1,4 @@
-package View;
+package view;
 //package Model;
 //
 //import java.awt.GridBagConstraints;

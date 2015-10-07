@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,6 @@ import javax.swing.JTextField;
 
 import org.folg.gedcom.model.EventFact;
 import org.folg.gedcom.model.Note;
-
-import View.PropertyEditorOld;
-import View.PropertyPanel;
 
 public class EventEditor extends PropertyPanel {
 

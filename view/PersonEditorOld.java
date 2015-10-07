@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
@@ -13,10 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import View.PersonSelectedListener;
-import View.PropertyPanel;
-import Wrappers.NGedcom;
-import Wrappers.NPerson;
+import model.wrappers.NGedcom;
+import model.wrappers.NPerson;
 
 public class PersonEditorOld extends PropertyPanel
 {

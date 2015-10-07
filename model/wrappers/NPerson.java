@@ -1,4 +1,4 @@
-package Wrappers;
+package model.wrappers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -252,7 +252,7 @@ public class NPerson {
 	}
 
 	public String toString() {
-		return person.toString();
+		return getName();
 	}
 
 	public List<Media> getAllMedia(NGedcom gedcom) {
@@ -582,5 +582,4 @@ public class NPerson {
     {
         getBaptismEvent().setDate(s);
     }
-    
 }

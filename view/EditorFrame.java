@@ -1,4 +1,4 @@
-package Model;
+package view;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -22,9 +22,8 @@ import com.sun.pdfview.PDFFile;
 import com.sun.pdfview.PDFPage;
 import com.sun.pdfview.PagePanel;
 
-import View.PersonSelectedListener;
-import Wrappers.NGedcom;
-import Wrappers.NPerson;
+import model.wrappers.NGedcom;
+import model.wrappers.NPerson;
 
 public class EditorFrame extends JFrame implements PersonSelectedListener{
 	

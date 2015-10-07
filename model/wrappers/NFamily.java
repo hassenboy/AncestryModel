@@ -1,4 +1,4 @@
-package Wrappers;
+package model.wrappers;
 
 import java.util.ArrayList;
 import java.util.List;
